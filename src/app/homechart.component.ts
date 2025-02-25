@@ -4,9 +4,10 @@ import highcharts3d from 'highcharts/highcharts-3d';
 highcharts3d(Highcharts);
 
 @Component({
-  selector: "app-home",
-  templateUrl: "./homechart.component.html",
-  styleUrls: ["./app.component.scss"]
+    selector: "app-home",
+    templateUrl: "./homechart.component.html",
+    styleUrls: ["./app.component.scss"],
+    standalone: false
 })
 export class HomechartComponent {
   data = [{
