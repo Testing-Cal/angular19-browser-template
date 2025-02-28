@@ -7,21 +7,21 @@ const context = process.env.context || "/";
 
 // Serve static files from the build folder under the '/test' base path
 if (context === "/") {
-  app.use("/", express.static(path.join(__dirname, "dist/angular19")));
+  app.use("/", express.static(path.join(__dirname, "dist/angular19/browser")));
 
   // Handle all other requests
   app.get("/*", (req, res) => {
-    res.sendFile(path.join(__dirname, "dist/angular19", "index.html"));
+    res.sendFile(path.join(__dirname, "dist/angular19/browser", "index.html"));
   });
 } else {
   app.use(
     context + "/",
-    express.static(path.join(__dirname, "dist/angular19"))
+    express.static(path.join(__dirname, "dist/angular19/browser"))
   );
 
   // Handle all other requests
   app.get(context + "/*", (req, res) => {
-    res.sendFile(path.join(__dirname, "dist/angular19", "index.html"));
+    res.sendFile(path.join(__dirname, "dist/angular19/browser", "index.html"));
   });
 }
 
